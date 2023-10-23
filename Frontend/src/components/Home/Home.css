@@ -1,0 +1,212 @@
+/* LandingOne */
+@import url("https://fonts.googleapis.com/css?family=Playfair Display");
+
+.landingone-container {
+  /*background-image: url("../images/maizetassel-background-landing.png");*/
+  box-shadow: inset 0 0 0 500px rgba(0, 0, 0, 0.4);
+  height: 92vh;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.landingone-container > img {
+  z-index: -1;
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+}
+
+.landingone-div {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  text-align: center;
+}
+
+.landingone-logo {
+  height: 70px;
+  width: 70px;
+  margin-bottom: 12px;
+}
+
+.landingone-heading {
+  font-family: "Playfair Display";
+  font-size: 50px;
+  font-weight: 900;
+  color: #ffffff;
+  text-align: center;
+  white-space: nowrap;
+}
+
+@media screen and (max-width: 680px) {
+  .landingone-heading {
+    font-size: 36px;
+  }
+
+  .landingone-div {
+    width: 50%;
+  }
+}
+
+/* LandingTwo */
+@import url("https://fonts.googleapis.com/css?family=Inter");
+
+.landingtwo-container {
+  background: #9fa59a;
+  color: #ffffff;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  justify-content: center;
+  text-align: center;
+}
+
+.productBanner {
+  width: 100%;
+  height: auto;
+  padding: 0 36px;
+}
+
+.landingtwo-div {
+  display: flex;
+  position: relative;
+  justify-content: center;
+  padding: 24px 48px;
+}
+
+.landingtwo-div-left {
+  width: 450px;
+  text-align: left;
+  margin: 0 28px;
+}
+
+.landingtwo-div-left > h1 {
+  font-family: "Playfair Display";
+  font-size: 70px;
+  white-space: nowrap;
+}
+
+.landingtwo-div-left > h3 {
+  font-family: "Inter";
+  font-size: 21px;
+}
+
+.landingtwo-div-right {
+  width: 800px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  justify-content: center;
+  text-align: left;
+  margin: 0 12px 0 36px;
+  color: #ffffff;
+}
+
+.landingtwo-div-right > h4,
+p {
+  font-size: 20px;
+  font-family: "Inter";
+  /*line-height: 1.5; */
+}
+
+.landingtwo-div-right > h4 {
+  font-weight: 900;
+}
+
+.landingtwo-div-right > p {
+  margin-top: 20px;
+  text-transform: capitalize;
+  line-height: 1.5;
+  font-weight: 100;
+}
+
+@media screen and (max-width: 680px) {
+  .landingtwo-div {
+    display: flex;
+    position: relative;
+    justify-content: center;
+    padding: 24px 48px;
+  }
+
+  .landingtwo-div-left {
+    width: 320px;
+    text-align: left;
+    margin: 0 28px;
+  }
+
+  .landingtwo-div-left > h1 {
+    font-family: "Playfair Display";
+    font-size: 48px;
+    white-space: nowrap;
+  }
+
+  .landingtwo-div-left > h3 {
+    font-family: "Inter";
+    font-size: 21px;
+  }
+
+  .landingtwo-div-right {
+    width: 520px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    justify-content: center;
+    text-align: left;
+    margin: 0 12px 0 36px;
+  }
+
+  .landingtwo-div-right > h4,
+  p {
+    font-size: 14px;
+    font-family: "Inter";
+    line-height: 1.5;
+  }
+
+  .landingtwo-div-right > p {
+    margin-top: 14px;
+    text-transform: capitalize;
+  }
+}
+
+/* Landing3 */
+.landing3-container {
+  background: #9fa59a;
+  color: #ffffff;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  justify-content: center;
+  text-align: center;
+}
+
+.landing3-container > img {
+  position: center;
+  padding-top: 24px;
+  width: 73%;
+  height: 97%;
+}
+
+/* Landing4 */
+.landing4-container {
+  background: #9fa59a;
+  color: #ffffff;
+  height: 100vh;
+  width: 100%;
+  position: relative;
+  justify-content: center;
+  text-align: center;
+}
+
+.landing4-container > img {
+  position: center;
+  padding-top: 24px;
+  width: 73%;
+  height: 97%;
+}
