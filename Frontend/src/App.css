@@ -1,8 +1,25 @@
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
+
+@media (max-width: 768px) {
+  /*for phone screens */
+  .container {
+    padding: 10px;
+  }
+
+  .navigation {
+    display: none;
+  }
+
+  .content {
+    font-size: 14px;
+  }
+}
+
 
 /*
 .main-div {
