@@ -17,6 +17,7 @@ import InputLabel from "@mui/material/InputLabel";
 import OutlinedInput from "@mui/material/OutlinedInput";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/joy/Button";
+import VerificationModal from "./VerificationModal";
 
 export default function Register() {
   const [showPassword, setShowPassword] = React.useState(false);
@@ -27,6 +28,21 @@ export default function Register() {
     event.preventDefault();
   };
 
+  const [isVerificationModalOpen, setIsVerificationModalOpen] = useState(false);
+
+  const [isVerificationModalClose, setIsVerificationModalClose] =
+    useState(false);
+
+
+    const openVerificationModal = () => {
+      setIsVerificationModalOpen(true);
+    };
+  
+    const closeVerificationModal = () => {
+      setIsVerificationModalOpen(false);
+    };
+
+
   const [registerRequest, setRegisterRequest] = useState({
     email: "",
     password: "",
@@ -36,48 +52,48 @@ export default function Register() {
     const { name, value } = e.target;
     console.log(`Name: ${name}, Value: ${value}`);
 
-    setRegisterRequest((prev) => { 
+    setRegisterRequest((prev) => {
       return {
         ...prev,
-        [name]: value
+        [name]: value,
       };
     });
   };
 
   const EmailField = styled(TextField)({
     "& label.Mui-focused": {
-      color: "#3B533A" // label color
+      color: "#3B533A", // label color
     },
     "& .MuiOutlinedInput-root": {
       "&.Mui-focused fieldset": {
-        borderColor: "#3B533A" // outline color
-      }
-    }
+        borderColor: "#3B533A", // outline color
+      },
+    },
   });
 
   // change login button default color
   const CreateButton = styled(Button)({
     backgroundColor: "#3B533A",
     "&:hover": {
-      backgroundColor: "#5f875e"
-    }
+      backgroundColor: "#5f875e",
+    },
   });
 
   const theme = createTheme({
     palette: {
       primary: {
-        main: "#3B533A"
-      }
+        main: "#3B533A",
+      },
     },
     components: {
       MuiFormControl: {
         styleOverrides: {
           root: {
-            backgroundColor: "white" // background color
-          }
-        }
-      }
-    }
+            backgroundColor: "white", // background color
+          },
+        },
+      },
+    },
   });
 
   const GrayCard = styled(Box)({
@@ -91,7 +107,7 @@ export default function Register() {
     justifyContent: "center",
     position: "relative",
     marginTop: "50px",
-    padding: "20px"
+    padding: "20px",
   });
 
   const Logo = styled("img")({
@@ -101,7 +117,7 @@ export default function Register() {
     transform: "translateX(-50%)",
     borderRadius: "50%",
     backgroundColor: "#FFFFFF",
-    padding: "14px"
+    padding: "14px",
   });
 
   return (
@@ -124,22 +140,20 @@ export default function Register() {
               sx={{
                 fontFamily: "Inter",
                 textAlign: "center",
-                marginBottom: "24px"
+                marginBottom: "24px",
               }}
             >
               Create account
             </Typography>
-            <Stack spacing={1}>         
+            <Stack spacing={1}>
               <ThemeProvider theme={theme}>
                 <FormControl
                   sx={{ m: 1, width: "40ch", borderRadius: "10px" }}
                   variant="outlined"
                 >
-                  <InputLabel htmlFor="outlined-search">
-                    Email
-                  </InputLabel>
+                  <InputLabel htmlFor="outlined-search">Email</InputLabel>
                   <OutlinedInput
-                    id="outlined-search"         
+                    id="outlined-search"
                     name="email"
                     onChange={handleInputChange}
                     value={registerRequest.email}
@@ -177,10 +191,8 @@ export default function Register() {
                   />
                 </FormControl>
               </ThemeProvider>
-              <CreateButton type="submit">
-                <Link className="login-link" to="/Main">
-                  Create account
-                </Link>
+              <CreateButton type="button" onClick={openVerificationModal}>
+                Create account
               </CreateButton>
             </Stack>
             <Typography
@@ -189,7 +201,7 @@ export default function Register() {
               sx={{
                 fontFamily: "Inter",
                 marginTop: "18px",
-                textAlign: "center"
+                textAlign: "center",
               }}
             >
               <Link
@@ -204,6 +216,13 @@ export default function Register() {
           </GrayCard>
         </form>
       </div>
+
+      {isVerificationModalOpen && (
+        <VerificationModal
+          isOpen={isVerificationModalOpen}
+          onClose={closeVerificationModal}
+        ></VerificationModal>
+      )}
     </div>
   );
 }
